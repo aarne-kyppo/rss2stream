@@ -1,0 +1,17 @@
+{
+  "name": "rss2stream",
+  "version": "0.8.0",
+  "authors": [
+    "Aarne Kyppö <kyppoa@gmail.com>"
+  ],
+  "description": "Application to convey RSS feed to apps via websockets.",
+  "keywords": [
+    "Angular",
+    "RSS"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.4.5",
+    "socket.io": "~1.3.6"
+  }
+}

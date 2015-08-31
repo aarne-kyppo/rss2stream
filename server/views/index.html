@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="molreader">
+    <head>
+        <!--<link href="{{rooturl}}/app.css" rel="stylesheet" />-->
+
+        <!-- build:js /app.js -->
+
+        <!-- bower -->
+        <script src="{{rooturl}}/angular/angular.js"></script>
+        <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+        <!-- endbower -->
+
+        <!-- appcode -->
+        <script>
+          var rooturl = "{{rooturl}}";
+          var socketaddress = "{{socketaddress}}";
+        </script>
+        <script src="{{rooturl}}/modules.js"></script>
+        <script src="{{rooturl}}/app.js"></script>
+        <!-- endappcode -->
+
+        <!-- endbuild -->
+
+    </head>
+    <body ng-controller="EntryController">
+      <p>
+        Data below is <u>test</u> data from yle news RSS service.
+        This is not <b>complete product</b> as you may have noticed.
+      </p>
+      <p>
+        This app conveys RSS feed entrie in web sockets.
+      </p>
+      <label for="rss_url">URL</label>
+      <input type="text" ng-model="rss_url" placeholder="Insert URL for RSS service"/>
+      <button ng-click="URLChanged()">Get data</button>
+      <p ng-repeat="entry in entries track by $index">
+        <a href="{%raw%}{{entry.link}}{%endraw%}"><span ng-bind="entry.title"></span></a>
+      </p>
+    </body>
+</html>
